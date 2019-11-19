@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: linear-gradient(rgba(128, 54, 54, 0.55),#000),url("assets/images/poster.jpg");
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+}
+
+.ngx-pagination a, .ngx-pagination button {
+    color:white !important;
+}
+.ngx-pagination a, .ngx-pagination button:hover {
+    color:black !important;
+}

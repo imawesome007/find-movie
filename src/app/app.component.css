@@ -1,0 +1,48 @@
+.container {
+    position: relative;
+    padding: 0em;
+    font-family: 'Lato', sans-serif;
+}
+
+.fullMovieName {
+    display: none;
+}
+
+.card {
+    border: rgba(143, 238, 99, 0.63);
+}
+
+.card-body:hover .fullMovieName {
+    position: relative;
+    display: inline-block;
+    color: rgb(143, 238, 99);
+}
+
+.card-body:hover .card-title {
+    display: none;
+}
+
+.card-body {
+    border-top: 1px solid rgb(118, 223, 48);
+    border-bottom: 1px solid rgb(118, 223, 48);
+    padding: 1em;
+    text-align: center;
+    color: cornsilk;
+    background-color: black;
+}
+
+input.form-control{
+    margin: 0em ;
+    position: absolute;
+    top:1em;
+    left:0em;
+    width:30%;
+}
+
+.container .row{
+    margin:4em auto 0em auto;
+}
+
+input::placeholder {  
+    text-align: center; 
+} 
