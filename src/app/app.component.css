@@ -1,6 +1,5 @@
 .container {
     position: relative;
-    padding: 0em;
     font-family: 'Lato', sans-serif;
 }
 
@@ -10,6 +9,8 @@
 
 .card {
     border: rgba(143, 238, 99, 0.63);
+    padding: 0;
+    margin: 0;
 }
 
 .card-body:hover .fullMovieName {
@@ -31,18 +32,51 @@
     background-color: black;
 }
 
-input.form-control{
-    margin: 0em ;
+.row input.form-control {
+    /* display: block; */
+    /* smargin: 2em 0em 2em 1em; */
     position: absolute;
-    top:1em;
-    left:0em;
-    width:30%;
+    top: 1em;
+    right: 1.5em;
+    width: 30%;
+    margin: 0;
 }
 
-.container .row{
+/* .container .row{
+    text-align: center;
     margin:4em auto 0em auto;
+} */
+
+input::placeholder {
+    text-align: center;
 }
 
-input::placeholder {  
-    text-align: center; 
-} 
+.row.justify-content-center {
+    margin-top: 3em;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 29vw;
+    object-fit: fill;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-previous, .my-pagination /deep/ .ngx-pagination .pagination-next {
+    background:#2199e8;
+}
+
+.my-pagination /deep/ .ngx-pagination li span {
+    color: white;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+    padding: 0;
+    margin:0;
+}
+
+.noMovies{
+    color:whitesmoke;
+}
+.card-footer{
+    text-align: center;
+}

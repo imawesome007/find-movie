@@ -1,11 +1,18 @@
 <div class="container">
-  <div>
-    <input type="text" placeholder="Search Movies..." (keyup)="searchMovies()" name="searchString"
-      [(ngModel)]="searchStr" class="form-control">
+  <div class="row justify-content-end">
+    <div class="form-group">
+      <input type="text" placeholder="Search Movies..." (keyup)="searchMovies(1)" name="searchString"
+        [(ngModel)]="searchStr" class="form-control">
+    </div>
   </div>
-  <br>
-  <div class="row">
-    <div class="col-xs-3 mb-2 mr-2" *ngFor="let movie of movieList |paginate: {itemsPerPage:10,currentPage:p}">
+  <div class="row justify-content-center">
+      <div class="noMovies" *ngIf="(movieList|async)?.length==0"> 
+        <div *ngIf="!isLoading">
+        <h3>Sorry!!! No movies to display with this name</h3> 
+      </div>
+      </div>
+    <br>
+    <div class="col-xs-3 mb-2 mr-2" *ngFor="let movie of movieList|async|paginate:config">
       <div class="card" style="width:16rem">
         <img class="card-img-top" [src]="getImage(movie.poster_path)" alt="album cover">
         <div class="card-body">
@@ -15,7 +22,7 @@
       </div>
     </div>
   </div>
-  <div class="card-footer pb-0 pt-3">
-    <pagination-controls (pageChange)="p =$event"></pagination-controls>
-  </div>
+  <div *ngIf="(movieList|async)?.length!=0" class="card-footer pb-2 pt-3 pl-0">
+      <pagination-controls class="my-pagination" id="1" (pageChange)="changePage($event)"></pagination-controls>
+    </div>
 </div>
